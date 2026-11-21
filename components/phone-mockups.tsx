@@ -55,10 +55,10 @@ export function ViewerPhone({ className }: { className?: string }) {
 export function AndroidHomePhone({ className }: { className?: string }) {
   return (
     <Image
-      src="/android/android-home-framed.png"
+      src="/android/android-home-framed-600.png"
       alt="SimplyPaper home screen on an Android phone"
-      width={1410}
-      height={2968}
+      width={600}
+      height={1263}
       sizes="260px"
       className={cn(
         "h-auto w-[230px] shrink-0 drop-shadow-[0_24px_24px_rgb(20_38_59/0.35)] sm:w-[260px]",

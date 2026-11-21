@@ -1,12 +1,14 @@
 import type { Metadata } from "next"
 
 import { ProsePage } from "@/components/prose-page"
+import { pageMetadata } from "@/lib/metadata"
 import { site } from "@/lib/site"
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "Privacy Policy",
   description: "SimplyPaper does not collect, store or share any personal data.",
-}
+  path: "/privacy",
+})
 
 export default function PrivacyPage() {
   return (

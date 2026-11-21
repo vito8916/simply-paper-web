@@ -3,6 +3,7 @@ import { Gabarito, Geist_Mono, Hanken_Grotesk } from "next/font/google"
 
 import "./globals.css"
 import { ThemeProvider } from "@/components/theme-provider"
+import { pageMetadata } from "@/lib/metadata"
 import { site } from "@/lib/site"
 import { cn } from "@/lib/utils";
 
@@ -17,14 +18,10 @@ const fontMono = Geist_Mono({
 })
 
 export const metadata: Metadata = {
+  metadataBase: new URL(site.url),
+  applicationName: site.name,
+  ...pageMetadata({ title: `${site.name}: ${site.tagline}`, description: site.description, path: "/" }),
   title: { default: `${site.name}: ${site.tagline}`, template: `%s · ${site.name}` },
-  description: site.description,
-  openGraph: {
-    title: `${site.name}: ${site.tagline}`,
-    description: site.description,
-    siteName: site.name,
-    type: "website",
-  },
 }
 
 export default function RootLayout({

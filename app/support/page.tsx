@@ -1,12 +1,14 @@
 import type { Metadata } from "next"
 
 import { ProsePage } from "@/components/prose-page"
+import { pageMetadata } from "@/lib/metadata"
 import { site } from "@/lib/site"
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "Support",
   description: "Help and contact information for SimplyPaper.",
-}
+  path: "/support",
+})
 
 export default function SupportPage() {
   return (
