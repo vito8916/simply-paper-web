@@ -5,24 +5,32 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-    --background: oklch(1 0 0);
-    --foreground: oklch(0.145 0 0);
-    --card: oklch(1 0 0);
-    --card-foreground: oklch(0.145 0 0);
-    --popover: oklch(1 0 0);
-    --popover-foreground: oklch(0.145 0 0);
-    --primary: oklch(0.52 0.105 223.128);
-    --primary-foreground: oklch(0.984 0.019 200.873);
-    --secondary: oklch(0.967 0.001 286.375);
-    --secondary-foreground: oklch(0.21 0.006 285.885);
-    --muted: oklch(0.97 0 0);
-    --muted-foreground: oklch(0.556 0 0);
-    --accent: oklch(0.97 0 0);
-    --accent-foreground: oklch(0.205 0 0);
+    /* Brand: lifted from the app icon. Flat colour, like cut paper. */
+    --sky: #4db1e6;
+    --sun: #fff76b;
+    --ink: #14263b;
+    --cardstock: #f9f6ef;
+    --leaf: #22c47a;
+    --petal: #ffdce6;
+
+    --background: #ffffff;
+    --foreground: var(--ink);
+    --card: #ffffff;
+    --card-foreground: var(--ink);
+    --popover: #ffffff;
+    --popover-foreground: var(--ink);
+    --primary: #12699e;
+    --primary-foreground: #ffffff;
+    --secondary: var(--cardstock);
+    --secondary-foreground: var(--ink);
+    --muted: var(--cardstock);
+    --muted-foreground: #526176;
+    --accent: var(--cardstock);
+    --accent-foreground: var(--ink);
     --destructive: oklch(0.577 0.245 27.325);
-    --border: oklch(0.922 0 0);
-    --input: oklch(0.922 0 0);
-    --ring: oklch(0.708 0 0);
+    --border: #e4e7ec;
+    --input: #e4e7ec;
+    --ring: #12699e;
     --chart-1: oklch(0.87 0 0);
     --chart-2: oklch(0.556 0 0);
     --chart-3: oklch(0.439 0 0);
@@ -76,6 +84,13 @@
 @theme inline {
     --font-sans: var(--font-sans);
     --font-heading: var(--font-heading);
+    --color-sky: var(--sky);
+    --color-sun: var(--sun);
+    --color-ink: var(--ink);
+    --color-cardstock: var(--cardstock);
+    --color-leaf: var(--leaf);
+    --color-petal: var(--petal);
+    --animate-sun: sun-turn 180s linear infinite;
     --color-sidebar-ring: var(--sidebar-ring);
     --color-sidebar-border: var(--sidebar-border);
     --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
@@ -129,4 +144,23 @@
   html {
     @apply font-sans;
     }
+}
+
+@keyframes sun-turn {
+  to {
+    rotate: 1turn;
+  }
+}
+
+@layer base {
+  :focus-visible {
+    outline: 3px solid var(--ink);
+    outline-offset: 3px;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    *, ::before, ::after {
+      animation: none !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
 }
