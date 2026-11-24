@@ -6,6 +6,8 @@ import { ThemeProvider } from "@/components/theme-provider"
 import { pageMetadata } from "@/lib/metadata"
 import { site } from "@/lib/site"
 import { cn } from "@/lib/utils";
+import { Analytics } from "@vercel/analytics/next"
+
 
 // Gabarito: chunky, geometric, cut-out letterforms for headings. Hanken Grotesk: quiet body text.
 const heading = Gabarito({ subsets: ["latin"], variable: "--font-heading" })
@@ -37,6 +39,7 @@ export default function RootLayout({
     >
       <body>
         <ThemeProvider forcedTheme="light">{children}</ThemeProvider>
+        <Analytics />
       </body>
     </html>
   )
